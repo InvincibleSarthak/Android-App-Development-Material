@@ -1,0 +1,18 @@
+//To update the database whenever an editText entry is changed.
+//AddInfo is the method which is called when the editText is changed in the end.
+//info is the editText id on which we are working.
+
+info.setOnFocusChangeListener(new View.OnFocusChangeListener() {
+            @Override
+            public void onFocusChange(View v, boolean hasFocus) {
+                if(hasFocus == false){
+                    String newEntry = info.getText().toString();
+                    if(info.length()!=0){
+                        AddInfo(newEntry);
+                    }
+                    else{
+                        Toast.makeText(getActivity(),"Enter Text Again!",Toast.LENGTH_SHORT).show();
+                    }
+                }
+            }
+        });

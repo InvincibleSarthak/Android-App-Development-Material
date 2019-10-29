@@ -1,0 +1,29 @@
+//Function to insert data inside the table 
+
+Example:
+
+//This is the function to insert the data of column 2 (present in the DatabaseHelper Class)
+public boolean addName(String item) {
+        SQLiteDatabase db = this.getWritableDatabase();
+        ContentValues contentValues = new ContentValues();
+        contentValues.put(COL2, item);
+
+        long result = db.insert(TABLE_NAME, null, contentValues);
+
+        if (result == -1) {
+            return false;
+        }
+        else {
+            return true;
+        }
+    }
+//This is the function present inside the Activity/Fragment
+public void AddLPage(String newEntry) {
+        boolean insertData = mDatabaseHelper.addLPage(newEntry);
+        if(insertData) {
+            Toast.makeText(getActivity(),"Data Successfully inserted!",Toast.LENGTH_SHORT).show();
+        }
+        else {
+            Toast.makeText(getActivity(),"Something went wrong!",Toast.LENGTH_SHORT).show();
+        }
+    }

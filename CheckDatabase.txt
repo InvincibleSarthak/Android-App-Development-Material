@@ -1,0 +1,4 @@
+To check the database file created inside the device:
+View -> Tool Window -> Device File Explorer -> data -> data -> "packagename" -> databases 
+
+Save this file in the Host Device and then open the database table using a chrome extension : SQLite Manager.
